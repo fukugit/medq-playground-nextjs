@@ -142,7 +142,7 @@ const chartConfig = {
 
 export function ChartAreaInteractive() {
   const isMobile = useIsMobile()
-  const [timeRange, setTimeRange] = React.useState("90d")
+  const [timeRange, setTimeRange] = React.useState("10d")
 
   React.useEffect(() => {
     if (isMobile) {
@@ -156,8 +156,11 @@ export function ChartAreaInteractive() {
     let daysToSubtract = 10
     if (timeRange === "30d") {
       daysToSubtract = 30
-    } else if (timeRange === "7d") {
-      daysToSubtract = 7
+    } else if (timeRange === "10d") {
+      daysToSubtract = 10
+    }
+    else if (timeRange === "90d") {
+      daysToSubtract = 90
     }
     const startDate = new Date(referenceDate)
     startDate.setDate(startDate.getDate() - daysToSubtract)
@@ -182,9 +185,9 @@ export function ChartAreaInteractive() {
             variant="outline"
             className="hidden *:data-[slot=toggle-group-item]:!px-4 @[767px]/card:flex"
           >
-            <ToggleGroupItem value="90d">Last 3 months</ToggleGroupItem>
-            <ToggleGroupItem value="30d">Last 30 days</ToggleGroupItem>
-            <ToggleGroupItem value="7d">Last 7 days</ToggleGroupItem>
+            <ToggleGroupItem value="90d" style={{ cursor: "pointer" }}>直近３ヶ月</ToggleGroupItem>
+            <ToggleGroupItem value="30d" style={{ cursor: "pointer" }}>直近30日間</ToggleGroupItem>
+            <ToggleGroupItem value="10d" style={{ cursor: "pointer" }}>直近10日間</ToggleGroupItem>
           </ToggleGroup>
           <Select value={timeRange} onValueChange={setTimeRange}>
             <SelectTrigger
