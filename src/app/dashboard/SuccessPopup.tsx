@@ -1,20 +1,20 @@
-// components/SuccessPopup.tsx
 "use client"
 
 import { useEffect, useState } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
+import { useSearchParams } from "next/navigation"
 
-export function SuccessPopup({ queryStatus }: { queryStatus?: string }) {
+export function SuccessPopup() {
+  const params = useSearchParams()
   const [showPopup, setShowPopup] = useState(false)
 
   useEffect(() => {
-    if (queryStatus === "success") {
+    if (params.get("status") === "success") {
       setShowPopup(true)
-      // URLクエリを消す
-      const newUrl = window.location.pathname
-      window.history.replaceState({}, "", newUrl)
+      // URLクエリを削除
+      window.history.replaceState({}, "", window.location.pathname)
     }
-  }, [queryStatus])
+  }, [params])
 
   useEffect(() => {
     if (showPopup) {

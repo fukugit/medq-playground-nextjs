@@ -1,6 +1,3 @@
-"use client"
-
-import { useSearchParams } from "next/navigation"
 import { AppSidebar } from "@/components/app-sidebar"
 import { ChartAreaInteractive } from "@/components/chart-area-interactive"
 import { DataTable } from "@/components/data-table"
@@ -9,11 +6,9 @@ import data from "./data.json"
 import { SuccessPopup } from "./SuccessPopup"
 
 export default function Page() {
-  const params = useSearchParams()
-
   return (
     <>
-      <SuccessPopup queryStatus={params.get("status") || undefined} />
+      <SuccessPopup />
 
       <div className="flex flex-1 flex-col">
         <div className="@container/main flex flex-1 flex-col gap-2">
