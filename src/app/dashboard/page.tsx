@@ -7,7 +7,6 @@ import data from "./data.json"
 export default function Page() {
   return (
     <>
-      {/* SuccessPopup は完全にクライアントコンポーネント */}
       <SuccessPopup />
 
       <div className="flex flex-1 flex-col">

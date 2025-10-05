@@ -1,6 +1,6 @@
 "use client"
 
-import { useEffect, useState } from "react"
+import { useState, useEffect } from "react"
 import { Dialog, DialogContent, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 import { useSearchParams } from "next/navigation"
 
@@ -11,7 +11,6 @@ export function SuccessPopup() {
   useEffect(() => {
     if (params.get("status") === "success") {
       setShowPopup(true)
-      // URLのクエリを削除
       window.history.replaceState({}, "", window.location.pathname)
     }
   }, [params])
