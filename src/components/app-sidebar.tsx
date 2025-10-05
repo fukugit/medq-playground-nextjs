@@ -13,6 +13,7 @@ import {
   IconHelp,
   IconInnerShadowTop,
   IconListDetails,
+  IconLogout,
   IconReport,
   IconSearch,
   IconSettings,
@@ -44,6 +45,11 @@ const data = {
       title: "問診票入力",
       url: "/medq-register",
       icon: IconDashboard,
+    },
+    {
+      title: "ログアウト",
+      url: "/",
+      icon: IconLogout,
     },
   ],
   navClouds: [

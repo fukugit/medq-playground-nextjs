@@ -34,16 +34,16 @@ export function LoginForm({
     <div className={cn("flex flex-col gap-6", className)} {...props}>
       <Card>
         <CardHeader>
-          <CardTitle>Login to your account</CardTitle>
+          <CardTitle>問診票管理ツール</CardTitle>
           <CardDescription>
-            Enter your email below to login to your account
+            ログイン画面
           </CardDescription>
         </CardHeader>
         <CardContent>
           <form onSubmit={handleSubmit}>
             <div className="flex flex-col gap-6">
               <div className="grid gap-3">
-                <Label htmlFor="email">Email</Label>
+                <Label htmlFor="email">メールアドレス</Label>
                 <Input
                   id="email"
                   type="email"
@@ -54,7 +54,7 @@ export function LoginForm({
               </div>
               <div className="grid gap-3">
                 <div className="flex items-center">
-                  <Label htmlFor="password">Password</Label>
+                  <Label htmlFor="password">パスワード</Label>
                 </div>
                 <Input
                   id="password"
@@ -65,7 +65,7 @@ export function LoginForm({
               </div>
               <div className="flex flex-col gap-3">
                 <Button type="submit" className="w-full cursor-pointer">
-                  Login
+                  ログイン
                 </Button>
               </div>
             </div>
