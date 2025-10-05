@@ -10,7 +10,7 @@ export default function ConfirmPageContent() {
 
   const handleRegister = () => {
     // 登録処理(API送信など)を実行
-    router.push("/dashboard")
+    router.push("/dashboard?status=success")
   }
 
   return (
