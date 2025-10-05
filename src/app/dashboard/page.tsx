@@ -1,13 +1,13 @@
-import { AppSidebar } from "@/components/app-sidebar"
+import { SectionCards } from "@/components/section-cards"
 import { ChartAreaInteractive } from "@/components/chart-area-interactive"
 import { DataTable } from "@/components/data-table"
-import { SectionCards } from "@/components/section-cards"
-import data from "./data.json"
 import { SuccessPopup } from "./SuccessPopup"
+import data from "./data.json"
 
 export default function Page() {
   return (
     <>
+      {/* SuccessPopup は完全にクライアントコンポーネント */}
       <SuccessPopup />
 
       <div className="flex flex-1 flex-col">
