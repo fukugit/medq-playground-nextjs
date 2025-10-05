@@ -11,6 +11,7 @@ export function SuccessPopup() {
   useEffect(() => {
     if (params.get("status") === "success") {
       setShowPopup(true)
+      // URLのクエリを削除
       window.history.replaceState({}, "", window.location.pathname)
     }
   }, [params])
